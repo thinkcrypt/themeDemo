@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Container, ServiceCart } from './components/index';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { ServiceCart } from './components/index';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import useCustomStyle from '@/hooks/useCustomStyle';
 
 type SliderBottomProps = {
@@ -14,7 +14,7 @@ type SliderBottomProps = {
 const SliderBottom: FC<SliderBottomProps> = ({ data }) => {
 	const { colors } = useCustomStyle();
 	return (
-		<Container bg={colors.secondary}>
+		<Box bg={colors.secondary}>
 			<Grid
 				templateColumns={{
 					base: 'repeat(1, 1fr)',
@@ -37,7 +37,7 @@ const SliderBottom: FC<SliderBottomProps> = ({ data }) => {
 					</GridItem>
 				))}
 			</Grid>
-		</Container>
+		</Box>
 	);
 };
 

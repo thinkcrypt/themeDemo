@@ -20,21 +20,7 @@ export default function Home() {
 			{/* Slider */}
 			<Banner data={data?.bannerData} />
 			{/* Slider Bottom */}
-			<SectionPadding bg={colors?.secondary}>
-				<SliderBottom data={homePageServices} />
-			</SectionPadding>
-
-			<SectionPadding bg={colors?.secondary}>
-				<Categories data={data?.categories} />
-			</SectionPadding>
-
-			{/* Products*/}
-			<SectionPadding bg={colors?.secondary}>
-				<Products data={products} />
-			</SectionPadding>
-			<SectionPadding bg={colors?.footer}>
-				<Footer data={footer}/>
-			</SectionPadding>
+			
 		</PageLayout>
 	);
 }

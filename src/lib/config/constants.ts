@@ -13,3 +13,14 @@ export const SearchDrawerHeaderMaxWidth = '800px';
 export const SearchDrawerCartMaxHeight = '800px';
 
 export const InputRadius = '24px';
+
+export const productCartHeight = '30rem';
+
+export const currency = {
+	code: 'BDT',
+	symbol: '৳',
+};
+
+export const cartBoxShadow = '0px 0px 8px -4px #C09671';
+
+export const searchInputWidth = '30rem';

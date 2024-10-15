@@ -2,7 +2,7 @@
 import { DesktopLogo } from '@/components';
 import { SearchDrawer } from '@/components/index';
 import useCustomStyle from '@/hooks/useCustomStyle';
-import { padding } from '@/lib/config/constants';
+import { padding, searchInputWidth } from '@/lib/config/constants';
 import { data } from '@/lib/config/data';
 import {
 	Box,
@@ -37,7 +37,7 @@ const DesktopHeader: FC<DesktopHeaderProps> = ({ ...props }) => {
 				</GridItem>
 				<GridItem>
 					<Flex justifyContent='flex-end' alignItems='center' h='full'>
-						<SearchInput />
+						<SearchInput width={searchInputWidth} />
 
 						<SearchButton onOpen={onSearchDrawerOpen} />
 						<CartButton />

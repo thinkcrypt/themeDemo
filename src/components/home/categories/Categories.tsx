@@ -37,7 +37,11 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 	const { colors } = useCustomStyle();
 
 	return (
-		<Box px={{ base: '1rem', lg: '4rem' }} py='4rem' bg={colors.secondary}>
+		<Box
+			py='4rem'
+			bg={colors.secondary}
+			borderBottom={`1px solid ${colors.primary}`}
+		>
 			<CommonTitle mb='4rem'>Categories</CommonTitle>
 			<Swiper
 				spaceBetween={20}

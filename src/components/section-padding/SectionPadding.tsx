@@ -2,11 +2,11 @@ import { Box, BoxProps } from '@chakra-ui/react';
 import React, { FC, ReactNode } from 'react';
 import { padding } from '@/lib/config/constants';
 
-type ContainerProps = BoxProps & {
+type SectionPaddingProps = BoxProps & {
 	children: ReactNode;
 };
 
-const Container: FC<ContainerProps> = ({ children, ...props }) => {
+const SectionPadding: FC<SectionPaddingProps> = ({ children, ...props }) => {
 	return (
 		<Box
 			w='full'
@@ -19,4 +19,4 @@ const Container: FC<ContainerProps> = ({ children, ...props }) => {
 	);
 };
 
-export default Container;
+export default SectionPadding;

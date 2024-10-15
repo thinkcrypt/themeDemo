@@ -49,66 +49,7 @@ export const data = {
 			},
 		],
 	},
-	// searchDrawer: {
-	// 	header: {
-	// 		title: 'What are you looking for?',
-	// 		input: true,
-	// 		searchTag: ['Bath', 'Decor', 'Kitchen'],
-	// 	},
-	// 	body: {
-	// 		title: 'Popular Products',
-	// 		products: [
-	// 			{
-	// 				imgSrc: '/searchProduct/productOne.webp',
-	// 				hoverImgSrc: '/searchProduct/productTwo.webp',
-	// 				productName: 'Africana katori set',
-	// 				price: 20.0,
-	// 				tags: ['sale'],
-	// 				rating: 5,
-	// 			},
-	// 			{
-	// 				imgSrc: '/searchProduct/productOne.webp',
-	// 				hoverImgSrc: '/searchProduct/productTwo.webp',
-	// 				productName: 'Africana katori set',
-	// 				price: 20.0,
-	// 				tags: ['sale'],
-	// 				rating: 5,
-	// 			},
-	// 			{
-	// 				imgSrc: '/searchProduct/productOne.webp',
-	// 				hoverImgSrc: '/searchProduct/productTwo.webp',
-	// 				productName: 'Africana katori set',
-	// 				price: 20.0,
-	// 				tags: ['sale'],
-	// 				rating: 5,
-	// 			},
-	// 			{
-	// 				imgSrc: '/searchProduct/productOne.webp',
-	// 				hoverImgSrc: '/searchProduct/productTwo.webp',
-	// 				productName: 'Africana katori set',
-	// 				price: 20.0,
-	// 				tags: ['sale'],
-	// 				rating: 5,
-	// 			},
-	// 			{
-	// 				imgSrc: '/searchProduct/productOne.webp',
-	// 				hoverImgSrc: '/searchProduct/productTwo.webp',
-	// 				productName: 'Africana katori set',
-	// 				price: 20.0,
-	// 				tags: ['sale'],
-	// 				rating: 5,
-	// 			},
-	// 			{
-	// 				imgSrc: '/searchProduct/productOne.webp',
-	// 				hoverImgSrc: '/searchProduct/productTwo.webp',
-	// 				productName: 'Africana katori set',
-	// 				price: 20.0,
-	// 				tags: ['sale'],
-	// 				rating: 5,
-	// 			},
-	// 		],
-	// 	},
-	// },
+
 	bannerData: {
 		label: 'Handmade Crockery Collection',
 		title: 'Elegant crockery makes meals special',
@@ -176,166 +117,93 @@ export const data = {
 		},
 	],
 
-	freshArrivals: [
+	products: [
 		{
 			imgSrc: '/searchProduct/productOne.webp',
-			hoverImgSrc: '/searchProduct/productTwo.webp',
 			productName: 'Africana katori set',
-			price: 20.0,
-			tags: ['sale'],
+			price: 20,
+			rating: 3,
+		},
+		{
+			imgSrc: '/searchProduct/productTwo.webp',
+			productName: 'Africana katori set',
+			price: 200,
 			rating: 3,
 		},
 		{
 			imgSrc: '/searchProduct/productOne.webp',
-			hoverImgSrc: '/searchProduct/productTwo.webp',
 			productName: 'Africana katori set',
-			price: 20.0,
-			tags: [],
-			rating: 3,
-		},
-		{
-			imgSrc: '/searchProduct/productOne.webp',
-			hoverImgSrc: '/searchProduct/productTwo.webp',
-			productName: 'Africana katori set',
-			price: 20.0,
-			tags: ['sale'],
+			price: 20,
 			rating: 4,
 		},
 		{
-			imgSrc: '/searchProduct/productOne.webp',
-			hoverImgSrc: '/searchProduct/productTwo.webp',
+			imgSrc: '/searchProduct/productTwo.webp',
 			productName: 'Africana katori set',
-			price: 20.0,
-			tags: ['sale'],
+			price: 200,
 			rating: 2,
 		},
 		{
 			imgSrc: '/searchProduct/productOne.webp',
-			hoverImgSrc: '/searchProduct/productTwo.webp',
 			productName: 'Africana katori set',
 			price: 20.0,
-			tags: ['sale'],
-			rating: 5,
-		},
-	],
-	handCraftedData: {
-		imgSrcOne: '',
-		imgSrcTwo: '',
-		topTitle: 'Contemporary ceramics made by natural and pure materials.',
-		textTitle: 'Handcrafted by the artist in Hongo',
-		description:
-			'Lorem ipsum been the industry standard dummy text ever sincethe when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
-	},
-	designersChoice: [
-		{
-			imgSrc: '',
-			hoverImgSrc: '',
-			productName: 'Africana katori set',
-			price: 20.0,
-			tags: ['sale'],
 			rating: 5,
 		},
 		{
-			imgSrc: '',
-			hoverImgSrc: '',
+			imgSrc: '/searchProduct/productOne.webp',
 			productName: 'Africana katori set',
-			price: 20.0,
-			tags: [],
+			price: 20,
 			rating: 3,
 		},
 		{
-			imgSrc: '',
-			hoverImgSrc: '',
+			imgSrc: '/searchProduct/productTwo.webp',
 			productName: 'Africana katori set',
-			price: 20.0,
-			tags: ['sale'],
+			price: 200,
+			rating: 3,
+		},
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20,
 			rating: 4,
 		},
 		{
-			imgSrc: '',
-			hoverImgSrc: '',
+			imgSrc: '/searchProduct/productTwo.webp',
 			productName: 'Africana katori set',
-			price: 20.0,
-			tags: ['sale'],
+			price: 200,
 			rating: 2,
 		},
 		{
-			imgSrc: '',
-			hoverImgSrc: '',
+			imgSrc: '/searchProduct/productOne.webp',
 			productName: 'Africana katori set',
 			price: 20.0,
-			tags: ['sale'],
 			rating: 5,
 		},
 	],
-	homePageBanner: {
-		one: {
-			label: 'Latest Design',
-			title: 'Summer Collection',
-			btnText: 'Shop Now',
-			btnLink: '',
-			imgSrc: '',
-		},
-		two: {
-			label: 'Hot Season',
-			title: "Men's hoddies",
-			btnText: 'Shop Now',
-			btnLink: '',
-			imgSrc: '',
-		},
-		three: {
-			label: 'Latest Design',
-			title: 'Summer Collection',
-			btnText: 'Shop Now',
-			btnLink: '',
-			imgSrc: '',
-		},
-		four: {
-			label: 'Upto 20% Off',
-			title: 'Women Collection',
-			btnText: 'Shop Now',
-			btnLink: '',
-			imgSrc: '',
-		},
-	},
-	articles: [
-		{
-			imgSrc: '',
-			title: "From clay to masterpiece: a beginner's guide to pottery.",
-			authorName: 'By Alexie Rechards',
-		},
-		{
-			imgSrc: '',
-			title: 'Refreshing your home with handmade decor for each season.',
-			authorName: 'By Alexie Rechards',
-		},
-		{
-			imgSrc: '',
-			title: 'Choosing the perfect handmade decor for any occasion.',
-			authorName: 'By Alexie Rechards',
-		},
-		{
-			imgSrc: '',
-			title: 'How to infuse home with personality using crafted decor.',
-			authorName: 'By Alexie Rechards',
-		},
-		{
-			imgSrc: '',
-			title: 'Unique handcrafted ceramic tableware creations and designs.',
-			authorName: 'By Alexie Rechards',
-		},
-	],
+
 	footer: {
 		address: {
-			label: 'Store location',
+			label: 'Contact Us',
 			address: '23 Market street san francisco HG 76543, United States.',
 			phone: '(+983) 1234567',
 			mail: 'hello@domain.com',
 		},
+		pages: {
+			label: 'Quick Links',
+			links: [
+				{
+					name: 'About',
+					link: '/about',
+				},
+				{
+					name: 'Privacy Policy',
+					link: '/privacy',
+				},
+				{
+					name: 'Refund, Return & Cancellation Policy',
+					link: '/refund',
+				},
+			],
+		},
 	},
 };
 
-export const currency = {
-	code: 'BDT',
-	symbol: '৳',
-};

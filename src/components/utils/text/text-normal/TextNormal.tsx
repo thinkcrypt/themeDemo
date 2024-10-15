@@ -4,7 +4,7 @@ import { Text, TextProps } from '@chakra-ui/react';
 import React, { FC } from 'react';
 
 type TextNormalProps = TextProps & {
-	children: string;
+	children?: string;
 };
 
 const TextNormal: FC<TextNormalProps> = ({ children, ...props }) => {
