@@ -25,7 +25,14 @@ const DesktopHeader: FC<DesktopHeaderProps> = ({ ...props }) => {
 	const { colors } = useCustomStyle();
 
 	return (
-		<Box w='full' h='80px' bg={colors.secondary} {...props}>
+		<Box
+			w='full'
+			h='80px'
+			bg={colors.secondary}
+			borderBottom={`1px solid ${colors?.lightPrimary}`}
+			py='.5rem'
+			{...props}
+		>
 			<Grid
 				px={padding.layoutPadding_X}
 				templateColumns='repeat(2, 1fr)'
@@ -38,7 +45,6 @@ const DesktopHeader: FC<DesktopHeaderProps> = ({ ...props }) => {
 				<GridItem>
 					<Flex justifyContent='flex-end' alignItems='center' h='full'>
 						<SearchInput width={searchInputWidth} />
-
 						<SearchButton onOpen={onSearchDrawerOpen} />
 						<CartButton />
 					</Flex>

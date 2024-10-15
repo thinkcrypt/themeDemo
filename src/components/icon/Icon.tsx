@@ -30,6 +30,7 @@ import { FaRegClock } from 'react-icons/fa6';
 import { FcFeedback } from 'react-icons/fc';
 import { HiUserGroup } from 'react-icons/hi';
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { HiOutlineMinusSmall } from 'react-icons/hi2';
 import {
 	MdDelete,
 	MdFastfood,
@@ -108,7 +109,8 @@ export type IconNameOptions =
 	| 'eye'
 	| 'map'
 	| 'phone'
-	| 'envelope';
+	| 'envelope'
+	| 'subtract-two';
 
 type IconProps = {
 	size?: number;
@@ -170,6 +172,7 @@ const icons: { [key in IconNameOptions]: FC<{ size: number; color: string }> } =
 		map: FaMapMarkerAlt,
 		phone: MdLocalPhone,
 		envelope: FaRegEnvelope,
+		'subtract-two': HiOutlineMinusSmall,
 	};
 
 const Icon: FC<IconProps> = ({ name, ...props }) => {

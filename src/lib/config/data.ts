@@ -205,5 +205,102 @@ export const data = {
 			],
 		},
 	},
+	productDetails: {
+		name: 'Africana bowl with handle',
+		category: 'Winter',
+		rating: 4,
+		price: 324,
+		shortDescription:
+			'Liposomal Vitamin C is an advanced form of Vitamin C encapsulated within liposomes, which are tiny fat-like particles that enhance its absorption and bioavailability in the body.',
+		imgSrc: '/product/productOne.webp',
+		totalReview: 3,
+		description: {
+			label: 'Product description',
+			value:
+				'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ullamcorper, eget euismod orci. Cum sociis natoque penatibus et magnis and montes nascetur ridiculus mus. Vestibulum and ultricies aliquam convallis.',
+		},
+		shipping: {
+			label: 'Shipping and return',
+			value:
+				'Lorem ipsum dolor consectetur adipiscing eiusmod tempor labore dolore magna enim ad minim veniam nostrud. Lorem ipsum dolor consectetur adipiscing. orem ipsum dolor consectetur.',
+			lists: [
+				'Dispatch: Within 24 Hours',
+				'Free shipping across all products.',
+				'International delivery time - 7-10 business days',
+				'Cash on delivery might be available',
+				'Easy 30 days returns and exchanges',
+			],
+		},
+		additionalInformation: {
+			label: 'Additional information',
+			value: {
+				Name: 'Africana bowl with handle',
+				SKU: 'HN-620012',
+				Vendor: 'Aurarts',
+				Title: 'Default Title',
+			},
+		},
+	},
+	relatedProducts: [
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20,
+			rating: 3,
+		},
+		{
+			imgSrc: '/searchProduct/productTwo.webp',
+			productName: 'Africana katori set',
+			price: 200,
+			rating: 3,
+		},
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20,
+			rating: 4,
+		},
+		{
+			imgSrc: '/searchProduct/productTwo.webp',
+			productName: 'Africana katori set',
+			price: 200,
+			rating: 2,
+		},
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20.0,
+			rating: 5,
+		},
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20,
+			rating: 3,
+		},
+		{
+			imgSrc: '/searchProduct/productTwo.webp',
+			productName: 'Africana katori set',
+			price: 200,
+			rating: 3,
+		},
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20,
+			rating: 4,
+		},
+		{
+			imgSrc: '/searchProduct/productTwo.webp',
+			productName: 'Africana katori set',
+			price: 200,
+			rating: 2,
+		},
+		{
+			imgSrc: '/searchProduct/productOne.webp',
+			productName: 'Africana katori set',
+			price: 20.0,
+			rating: 5,
+		},
+	],
 };
-

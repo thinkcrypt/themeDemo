@@ -1,20 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { TextNormal } from '@/components';
-import { currency } from '@/lib/config/data';
+import { currency } from '@/lib/config/constants';
 import { Flex, FlexProps } from '@chakra-ui/react';
 
 import React, { FC } from 'react';
 type PriceProps = FlexProps & {
-	price?: string;
+	price?: string | number;
+	fontSize?: string;
+	color?: string;
 };
 
-const Price: FC<PriceProps> = ({ price, ...props }) => {
+const Price: FC<PriceProps> = ({ price, fontSize, color, ...props }) => {
 	return (
-		<Flex justifyContent='center' gap={2} {...props}>
-			<TextNormal>{currency?.symbol}</TextNormal>
-			<TextNormal>{price}</TextNormal>
-			<TextNormal>{currency?.code}</TextNormal>
+		<Flex fontSize='3rem' justifyContent='center' gap={2} {...props}>
+			<TextNormal fontSize={fontSize} color={color}>
+				{currency?.symbol}
+			</TextNormal>
+			<TextNormal fontSize={fontSize} color={color}>
+				{price}
+			</TextNormal>
+			<TextNormal fontSize={fontSize} color={color}>
+				{currency?.code}
+			</TextNormal>
 		</Flex>
 	);
 };

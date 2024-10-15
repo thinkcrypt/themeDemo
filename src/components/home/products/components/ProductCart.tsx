@@ -8,7 +8,7 @@ type ProductCartProps = BoxProps & {
 	data: {
 		imgSrc: string;
 		productName: string;
-		price: string;
+		price: string | number;
 		rating: number;
 	};
 };

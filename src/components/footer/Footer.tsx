@@ -1,6 +1,5 @@
 import { Box, BoxProps, Grid, GridItem } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import { TextNormal } from '../utils';
 import Contact from './components/Contact';
 import QuickLinks from './components/QuickLinks';
 import SearchInput from '../header/header-components/SearchInput';

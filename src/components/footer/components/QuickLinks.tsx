@@ -1,6 +1,6 @@
-import { TextNormal, Icon, Column } from '@/components';
+import { TextNormal, Column } from '@/components';
 import useCustomStyle from '@/hooks/useCustomStyle';
-import { Box, BoxProps, Flex, Text, TextProps } from '@chakra-ui/react';
+import { Box, BoxProps } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import React, { FC } from 'react';
@@ -15,7 +15,7 @@ type QuickLinksProps = BoxProps & {
 const QuickLinks: FC<QuickLinksProps> = ({ data, ...props }) => {
 	const { colors } = useCustomStyle();
 	return (
-		<Box color={colors?.white}>
+		<Box color={colors?.white} {...props}>
 			<TextNormal
 				mb='1rem'
 				fontWeight='600'

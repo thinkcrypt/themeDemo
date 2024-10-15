@@ -1,5 +1,6 @@
 export const colors = {
 	primary: '#C09671',
+	lightPrimary: '#e7b990',
 	secondary: '#F9F1EA',
 	footer: '#332F2A',
 	white: '#ffffff',

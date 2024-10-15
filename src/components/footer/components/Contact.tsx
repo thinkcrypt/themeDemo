@@ -1,6 +1,6 @@
 import { TextNormal, Icon } from '@/components';
 import useCustomStyle from '@/hooks/useCustomStyle';
-import { Box, BoxProps, Flex, Text, TextProps } from '@chakra-ui/react';
+import { Box, BoxProps, Flex } from '@chakra-ui/react';
 
 import React, { FC } from 'react';
 
@@ -16,7 +16,7 @@ type ContactProps = BoxProps & {
 const Contact: FC<ContactProps> = ({ data, ...props }) => {
 	const { colors } = useCustomStyle();
 	return (
-		<Box color={colors?.white}>
+		<Box color={colors?.white} {...props}>
 			<TextNormal
 				mb='1rem'
 				fontWeight='600'

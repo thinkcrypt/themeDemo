@@ -21,7 +21,8 @@ const Products: FC<ProductsProps> = ({ data, ...props }) => {
 					base: 'repeat(1, 1fr)',
 					sm: 'repeat(2, 1fr)',
 					md: 'repeat(3, 1fr)',
-					xl: 'repeat(5, 1fr)',
+					xl: 'repeat(4, 1fr)',
+					'2xl': 'repeat(5, 1fr)',
 					// '2xl': 'repeat(4, 1fr)',
 				}}
 				gap={6}

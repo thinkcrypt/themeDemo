@@ -8,7 +8,7 @@ import React, { FC } from 'react';
 import Price from './Price';
 type CartBodyProps = FlexProps & {
 	data: {
-		price: string;
+		price: string | number;
 		rating: number;
 		productName: string;
 	};
@@ -21,7 +21,7 @@ const CartBody: FC<CartBodyProps> = ({ data, ...props }) => {
 			<Box>
 				<Rating ratingValue={data?.rating} />
 			</Box>
-			<Price price={data?.price} />
+			<Price fontWeight='bold' fontSize='1rem' price={data?.price} />
 		</Column>
 	);
 };

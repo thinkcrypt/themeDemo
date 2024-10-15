@@ -7,12 +7,11 @@ import {
 	SectionPadding,
 	Products,
 } from '@/components';
-import Footer from '@/components/footer/Footer';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { data } from '@/lib/config/data';
 
 export default function Home() {
-	const { homePageServices, products, footer } = data;
+	const { homePageServices, products } = data;
 	const { colors } = useCustomStyle();
 
 	return (
@@ -31,9 +30,6 @@ export default function Home() {
 			{/* Products*/}
 			<SectionPadding bg={colors?.secondary}>
 				<Products data={products} />
-			</SectionPadding>
-			<SectionPadding bg={colors?.footer}>
-				<Footer data={footer}/>
 			</SectionPadding>
 		</PageLayout>
 	);
