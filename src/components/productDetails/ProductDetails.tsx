@@ -37,14 +37,17 @@ const ProductDetails: FC<ProductDetailsProps> = ({ data, ...props }) => {
 
 	return (
 		<Box py='6rem' borderBottom={`1px solid ${colors?.primary}`} {...props}>
-			<Grid templateColumns='repeat(2, 1fr)' gap={6}>
+			<Grid
+				templateColumns={{ base: 'repeat(1, 1fr)', xl: 'repeat(2, 1fr)' }}
+				gap={6}
+			>
 				<GridItem w='100%' h='auto'>
 					<LeftPart imgSrc={data?.imgSrc} />
 				</GridItem>
 				<GridItem w='100%' h='auto'>
 					<Box>
 						<ProductInfo data={data} />
-						<Box py='1.5rem'>
+						<Box py='1.5rem' mb='32px'>
 							<TextNormal mb='12px'>Quantity</TextNormal>
 							<Grid templateColumns='repeat(8, 1fr)' gap={6}>
 								<GridItem colSpan={{ base: 2, md: 1 }} w='100%' h='3rem'>
@@ -62,7 +65,11 @@ const ProductDetails: FC<ProductDetailsProps> = ({ data, ...props }) => {
 							</Grid>
 						</Box>
 						<Box>
-							<ProductAccordion />
+							<ProductAccordion
+								description={data?.description}
+								shipping={data?.shipping}
+								additionalInformation={data?.additionalInformation}
+							/>
 						</Box>
 					</Box>
 				</GridItem>
