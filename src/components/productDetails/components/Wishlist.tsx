@@ -11,10 +11,12 @@ const WishList: FC<WishListProps> = ({ ...props }) => {
 	return (
 		<Center
 			border={`1px solid ${colors?.primary}`}
-			w='full'
-			h='full'
+			w='3rem'
+			h='3rem'
 			borderRadius='4px'
 			title='Add to wishlist'
+			cursor='pointer'
+			_hover={{ border: `1px solid ${colors?.black}` }}
 			{...props}
 		>
 			<Icon color={colors?.textColor} name='wishlist' />

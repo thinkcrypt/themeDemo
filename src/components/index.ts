@@ -5,6 +5,7 @@ export { default as Banner } from './banner/Banner';
 export { default as TopHeader } from './topHeader/TopHeader';
 export { default as PageLayout } from './layout/PageLayout';
 export { default as SectionPadding } from './section-padding/SectionPadding';
+export { default as Overlay } from './overlay/Overlay';
 
 export * from './header';
 export * from './icon';
