@@ -19,6 +19,7 @@ const ProductDetails: FC<ProductDetailsProps> = ({ data, ...props }) => {
 	const [quantity, setQuantity] = useState(1);
 	const { colors } = useCustomStyle();
 
+	// for handling quantity
 	const handleQuantity = (type: string) => {
 		if (type == 'increment') {
 			setQuantity(quantity + 1);
