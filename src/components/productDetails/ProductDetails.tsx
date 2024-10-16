@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, BoxProps, Grid, GridItem } from '@chakra-ui/react';
 import React, { FC, useState } from 'react';
 
