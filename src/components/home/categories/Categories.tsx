@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import React, { FC, useRef } from 'react';
 import { Box, Center } from '@chakra-ui/react';
@@ -33,10 +34,7 @@ const swiperBreakpoints = {
 };
 
 type CategoriesProps = {
-	data?: {
-		imgSrc: string;
-		name: string;
-	}[];
+	data: any
 };
 
 const Categories: FC<CategoriesProps> = ({ data }) => {
@@ -60,7 +58,7 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 				breakpoints={swiperBreakpoints}
 				onSwiper={swiper => (swiperRef.current = swiper)}
 			>
-				{data?.map((item, i) => (
+				{data?.map((item:any, i:number) => (
 					<SwiperSlide key={i}>
 						<Center bg={colors.secondary} w='full' h='18rem'>
 							<CategoriesCart data={item} />

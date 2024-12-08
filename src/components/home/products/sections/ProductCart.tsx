@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, BoxProps, Center, useToast } from '@chakra-ui/react';
 import React, { FC } from 'react';
 import { CartHeader, CartBody, CartButton } from './index';
@@ -6,15 +7,7 @@ import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 
 type ProductCartProps = BoxProps & {
-	data: {
-		_id: string;
-		imgSrc: string;
-		productName: string;
-		price: string | number;
-		rating: number;
-		category: string;
-		stock?: number;
-	};
+	data: any;
 };
 
 const ProductCart: FC<ProductCartProps> = ({ data, ...props }) => {
@@ -38,8 +31,7 @@ const ProductCart: FC<ProductCartProps> = ({ data, ...props }) => {
 	return (
 		<Box w='full' {...props}>
 			<Link href={`/products/${_id}`}>
-				<CartHeader imgSrc={data?.imgSrc} />
-
+				<CartHeader imgSrc={data?.image} />
 				<CartBody data={data} />
 			</Link>
 			<Center mt='auto' p='.8rem'>
