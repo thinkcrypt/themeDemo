@@ -11,11 +11,16 @@ import {
 import { ProductCarousel } from '@/components';
 import useCustomStyle from '@/hooks/useCustomStyle';
 import { data } from '@/lib/config/data';
-import { BoxProps } from '@chakra-ui/react';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export default function Home() {
-	const { homePageServices, products, categoriesData } = data;
+	const {
+		homePageServices,
+		products,
+		categoriesData,
+		sportsCollection,
+		winterCollection,
+	} = data;
 	const { colors } = useCustomStyle();
 
 	return (
@@ -23,40 +28,37 @@ export default function Home() {
 			{/* Slider */}
 			<Banner data={data?.bannerData} />
 			{/* Slider Bottom */}
-			<SectionPadding bg={colors?.secondary}>
+			<SectionWrapper>
 				<SliderBottom data={homePageServices} />
-			</SectionPadding>
+			</SectionWrapper>
 
-			<SectionPadding bg={colors?.secondary}>
+			<SectionWrapper>
 				<Categories data={categoriesData?.doc} />
-			</SectionPadding>
-			{/* Products*/}
-			<SectionWrapper borderBottom={`1px solid ${colors?.primary}`}>
+			</SectionWrapper>
+
+			<SectionPadding py={'3rem'} bg={colors?.secondary}>
 				<CommonTitle mb='4rem'>Products</CommonTitle>
 				<Products data={products?.doc} />
+			</SectionPadding>
+
+			<SectionWrapper>
+				<ProductCarousel
+					title={'Sports Collection'}
+					data={sportsCollection?.doc}
+				/>
 			</SectionWrapper>
 
 			<SectionWrapper>
-				<CommonTitle mb='4rem'>Sports Collections</CommonTitle>
-				<ProductCarousel data={products?.doc} />
-			</SectionWrapper>
-
-			<SectionWrapper>
-				<CommonTitle mb='4rem'>Winter Collections</CommonTitle>
-				<ProductCarousel data={products?.doc} />
+				<ProductCarousel
+					title='Winter Collection'
+					data={winterCollection?.doc}
+				/>
 			</SectionWrapper>
 		</PageLayout>
 	);
 }
 
-export const SectionWrapper: FC<BoxProps & { children: ReactNode }> = ({
-	children,
-	...props
-}) => {
+const SectionWrapper = ({ children }: { children: ReactNode }) => {
 	const { colors } = useCustomStyle();
-	return (
-		<SectionPadding py='4rem' bg={colors?.secondary} {...props}>
-			{children}
-		</SectionPadding>
-	);
+	return <SectionPadding bg={colors?.secondary}>{children}</SectionPadding>;
 };

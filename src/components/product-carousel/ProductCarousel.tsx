@@ -13,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Pagination } from 'swiper/modules';
 import SwipperArrowButton from '@/components/swiper-arrow/SwipperArrowButton';
+import { CommonTitle } from '@/components';
 
 const swiperBreakpoints = {
 	320: {
@@ -34,9 +35,10 @@ const swiperBreakpoints = {
 
 type ProductCarouselProps = {
 	data: any;
+	title: string;
 };
 
-const ProductCarousel: FC<ProductCarouselProps> = ({ data }) => {
+const ProductCarousel: FC<ProductCarouselProps> = ({ data, title }) => {
 	const { colors } = useCustomStyle();
 	const swiperRef = useRef<SwiperCore>();
 
@@ -47,6 +49,9 @@ const ProductCarousel: FC<ProductCarouselProps> = ({ data }) => {
 			borderBottom={`1px solid ${colors.primary}`}
 			position='relative'
 		>
+			<CommonTitle fontSize={{ base: '2rem', lg: '3.5rem' }} mb='4rem'>
+				{title}
+			</CommonTitle>
 			<Swiper
 				spaceBetween={20}
 				pagination={{ clickable: true }}
@@ -64,7 +69,7 @@ const ProductCarousel: FC<ProductCarouselProps> = ({ data }) => {
 			</Swiper>
 			<Box
 				position='absolute'
-				top={{ base: '56px', xl: '0px' }}
+				top={{ base: '3.25rem', lg: '1.75rem' }}
 				right='0px'
 				bg='red'
 			>

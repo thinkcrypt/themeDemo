@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
-import React, { FC, useRef } from 'react';
+import React, { FC, ReactNode, useRef } from 'react';
 import { Box, Center } from '@chakra-ui/react';
 import useCustomStyle from '@/hooks/useCustomStyle';
 
@@ -34,7 +34,7 @@ const swiperBreakpoints = {
 };
 
 type CategoriesProps = {
-	data: any
+	data: any;
 };
 
 const Categories: FC<CategoriesProps> = ({ data }) => {
@@ -42,12 +42,7 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 	const swiperRef = useRef<SwiperCore>();
 
 	return (
-		<Box
-			py='4rem'
-			bg={colors.secondary}
-			borderBottom={`1px solid ${colors.primary}`}
-			position='relative'
-		>
+		<BoxWrapper>
 			<CommonTitle fontSize={{ base: '2rem', lg: '3.5rem' }} mb='4rem'>
 				Categories
 			</CommonTitle>
@@ -58,7 +53,7 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 				breakpoints={swiperBreakpoints}
 				onSwiper={swiper => (swiperRef.current = swiper)}
 			>
-				{data?.map((item:any, i:number) => (
+				{data?.map((item: any, i: number) => (
 					<SwiperSlide key={i}>
 						<Center bg={colors.secondary} w='full' h='18rem'>
 							<CategoriesCart data={item} />
@@ -66,14 +61,32 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 					</SwiperSlide>
 				))}
 			</Swiper>
-			<Box position='absolute' top={{ base: '56px', xl: '48px' }} right='0px'>
+			<Box
+				position='absolute'
+				top={{ base: '3.25rem', lg: '1.75rem' }}
+				right='0px'
+			>
 				<SwipperArrowButton
 					next={() => swiperRef.current?.slideNext()}
 					prev={() => swiperRef.current?.slidePrev()}
 				/>
 			</Box>
-		</Box>
+		</BoxWrapper>
 	);
 };
 
 export default Categories;
+
+const BoxWrapper = ({ children }: { children: ReactNode }) => {
+	const { colors } = useCustomStyle();
+	return (
+		<Box
+			py='4rem'
+			bg={colors.secondary}
+			borderBottom={`1px solid ${colors.primary}`}
+			position='relative'
+		>
+			{children}
+		</Box>
+	);
+};
