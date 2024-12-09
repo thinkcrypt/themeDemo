@@ -34,7 +34,7 @@ const swiperBreakpoints = {
 };
 
 type CategoriesProps = {
-	data: any
+	data: any;
 };
 
 const Categories: FC<CategoriesProps> = ({ data }) => {
@@ -58,7 +58,7 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 				breakpoints={swiperBreakpoints}
 				onSwiper={swiper => (swiperRef.current = swiper)}
 			>
-				{data?.map((item:any, i:number) => (
+				{data?.map((item: any, i: number) => (
 					<SwiperSlide key={i}>
 						<Center bg={colors.secondary} w='full' h='18rem'>
 							<CategoriesCart data={item} />
@@ -66,7 +66,11 @@ const Categories: FC<CategoriesProps> = ({ data }) => {
 					</SwiperSlide>
 				))}
 			</Swiper>
-			<Box position='absolute' top={{ base: '56px', xl: '48px' }} right='0px'>
+			<Box
+				position='absolute'
+				top={{ base: '3.25rem', lg: '1.75rem' }}
+				right='0px'
+			>
 				<SwipperArrowButton
 					next={() => swiperRef.current?.slideNext()}
 					prev={() => swiperRef.current?.slidePrev()}
