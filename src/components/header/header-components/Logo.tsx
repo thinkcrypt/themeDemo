@@ -9,8 +9,9 @@ type LogoProps = FlexProps & {
 const Logo: FC<LogoProps> = ({ imgSrc, ...props }) => {
 	return (
 		<Flex
-			w='full'
+			w='4rem'
 			h='full'
+			rounded={'full'}
 			alignItems='center'
 			justifyContent='flex-start'
 			{...props}

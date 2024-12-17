@@ -11,12 +11,18 @@ export const colors = {
 	warning: '#FFB800',
 	textColor: '#828282',
 	black: '#000000',
+	light_black: 'rgba(51, 51, 51, 0.301)',
 	menuTextColor: '#322e2a',
 	titleColor: '#322e2a',
 	danger: '#ed5c5c',
 	deepDanger: '#d43333',
 	borderColor: '#DEE9E9',
 	overlay: 'rgba(0,0,0,0.3)',
+
+	/// mine
+text_primary: '#171717',
+text_secondary: '#666'
+
 };
 
 const useCustomStyle = () => {

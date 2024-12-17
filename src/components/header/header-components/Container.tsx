@@ -12,8 +12,8 @@ const Container: FC<ContainerProps> = ({ children, ...props }) => {
 		<Box
 			w='full'
 			h='80px'
-			bg={colors.secondary}
-			borderBottom={`1px solid ${colors?.lightPrimary}`}
+			// bg={colors.secondary}
+			borderBottom={`1px solid ${colors?.light_black}`}
 			py='.5rem'
 			{...props}
 		>
