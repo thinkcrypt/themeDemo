@@ -13,7 +13,7 @@ import useCustomStyle from '@/hooks/useCustomStyle';
 import { data } from '@/lib/config/data';
 import { ReactNode } from 'react';
 import { ThemeCard, Title } from './component';
-import { Box } from '@chakra-ui/react';
+import { Box, Grid } from '@chakra-ui/react';
 
 export default function Home() {
 	const {
@@ -29,9 +29,9 @@ export default function Home() {
 				<Box mt='2rem'>
 					<Title />
 				</Box>
-				<Box>
+				<Grid gridTemplateColumns={'1fr 1fr 1fr'}>
 					<ThemeCard />
-				</Box>
+				</Grid>
 			</SectionWrapper>
 		</PageLayout>
 	);

@@ -23,7 +23,7 @@ export const data = {
 			'https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', // URL to the image of the theme
 		name: 'Demo Theme', // Name of the theme
 		price: 5999, // Price of the theme
-		isFree: '', // Whether the theme is free or not
+		isFree: 'No', // Whether the theme is free or not
 		developer: 'Hassan S.', // Name of the developer
 		demoUrl: 'https://images.unsplash.com', // URL to the demo of the theme
 		framework: 'React/NextJs', // Framework of the theme
