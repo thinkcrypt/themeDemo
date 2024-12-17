@@ -19,7 +19,7 @@ const icons: { [key in IconNameOptions]: FC<{ size: number; color: string }> } =
 		'navigate-page': BsBoxArrowUpRight,
 		arrow: BsArrowUpLeft,
 	};
-
+// now
 const Icon: FC<IconProps> = ({ name, ...props }) => {
 	const IconComponent = icons[name] || BsBoxArrowUpRight;
 	const brandColor = useColorModeValue(colors.brand.light, colors.brand.dark);
