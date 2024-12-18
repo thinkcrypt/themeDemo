@@ -4,9 +4,11 @@ import { useColorModeValue } from '@chakra-ui/react';
 import { FC } from 'react';
 import { BsBoxArrowUpRight } from 'react-icons/bs';
 import { BsArrowUpLeft } from 'react-icons/bs';
+import { AiOutlineLike } from "react-icons/ai";
+import { TfiEye } from "react-icons/tfi";
 //
 
-export type IconNameOptions = 'navigate-page' | 'arrow';
+export type IconNameOptions = 'navigate-page' | 'arrow' | 'like' | 'eye';
 
 type IconProps = {
 	size?: number;
@@ -18,6 +20,8 @@ const icons: { [key in IconNameOptions]: FC<{ size: number; color: string }> } =
 	{
 		'navigate-page': BsBoxArrowUpRight,
 		arrow: BsArrowUpLeft,
+		like: AiOutlineLike,
+		eye: TfiEye,
 	};
 // now
 const Icon: FC<IconProps> = ({ name, ...props }) => {

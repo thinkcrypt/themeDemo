@@ -1,5 +1,5 @@
 export const padding = {
-	layoutPadding_X: '6rem',
+	layoutPadding_X: '18vw',
 	layoutPadding_X_Mobile: '1rem',
 };
 
@@ -19,6 +19,11 @@ export const productCartHeight = '30rem';
 export const currency = {
 	code: 'BDT',
 	symbol: '৳',
+};
+
+export const layoutMargin = {
+	mr: '50px',
+	mt: '70px',
 };
 
 export const cartBoxShadow = '0px 0px 8px -4px #C09671';
