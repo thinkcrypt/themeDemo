@@ -5,17 +5,21 @@ import { ReactNode } from 'react';
 import { Box, Grid } from '@chakra-ui/react';
 import Title from '@/component/Title/Title';
 import { ThemeCard } from '@/component';
-import { layoutMargin } from '@/lib/config/constants';
 // import { data } from '@/lib/config/data';
 import { useGetAllQuery } from '@/store/services/commonApi';
 import CustomSkeleton from '@/component/Skeleton/Skeleton';
 
+////////////////////// STYLES
 const CARD_BREAKPOINTS = {
 	base: '1fr',
 	sm: '1fr 1fr',
 	md: '1fr 1fr 1fr',
 	// lg:
 };
+const MARGIN_TOP = '70px';
+const ROW_GAP = '50px';
+const COLUMN_GAP = '10px';
+const MARGIN_BOTTOM = '7rem';
 
 export default function Home() {
 	const { data, isLoading } = useGetAllQuery({ path: 'themes' });
@@ -30,17 +34,11 @@ export default function Home() {
 						<CustomSkeleton />
 					</Box>
 				) : (
-					<Grid
-						mt={layoutMargin?.mt}
-						gridTemplateColumns={CARD_BREAKPOINTS}
-						gridRowGap={'50px'}
-						gridColumnGap={'10px'}
-						mb='7rem'
-					>
+					<ThemeCardWrapper>
 						{data?.doc?.map((item: any, i: number) => (
 							<ThemeCard key={i} backendData={item} />
 						))}
-					</Grid>
+					</ThemeCardWrapper>
 				)}
 			</SectionWrapper>
 		</PageLayout>
@@ -49,4 +47,17 @@ export default function Home() {
 
 const SectionWrapper = ({ children }: { children: ReactNode }) => {
 	return <SectionPadding>{children}</SectionPadding>;
+};
+const ThemeCardWrapper = ({ children }: { children: ReactNode }) => {
+	return (
+		<Grid
+			mt={MARGIN_TOP}
+			gridTemplateColumns={CARD_BREAKPOINTS}
+			gridRowGap={ROW_GAP}
+			gridColumnGap={COLUMN_GAP}
+			mb={MARGIN_BOTTOM}
+		>
+			{children}
+		</Grid>
+	);
 };

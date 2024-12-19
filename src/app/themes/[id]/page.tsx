@@ -22,42 +22,46 @@ const ThemeDetails = () => {
 	const { id } = useParams();
 	const { data, isLoading } = useGetByIdQuery({ path: 'themes', id });
 	const relatedImgs =
-		data?.images.length > 0 ? (
+		isLoading && !data ? (
+			<CustomSkeleton />
+		) : data?.images.length > 0 ? (
 			<RelatedImages images={data} />
 		) : (
 			<Text>No Related Images</Text>
 		);
+
 	// console.log('dynamic id data', data);
+	///////////////////// UI COMPONENTS
+	const isThemeIntro = isLoading ? (
+		<CustomSkeleton />
+	) : (
+		<ThemeIntro data={data} />
+	);
+
+	const isThemeFeatures = isLoading ? (
+		<CustomSkeleton />
+	) : (
+		<ThemeFeatureDescription data={data} />
+	);
 
 	return (
 		<PageLayout>
 			<SectionWrapper>
-				<Grid
-					gridTemplateColumns={{ base: '1fr', md: '40% 1px 60%' }}
-					mt='3rem'
-					gap='20px'
-				>
-					{isLoading ? <CustomSkeleton /> : <ThemeIntro data={data} />}
+				<ThemeLayout>
+					{isThemeIntro}
 					<DeviderLine />
-
-					{isLoading ? (
-						<CustomSkeleton />
-					) : (
-						<ThemeFeatureDescription data={data} />
-					)}
-				</Grid>
+					{isThemeFeatures}
+				</ThemeLayout>
 			</SectionWrapper>
-			<Box
-				bg={colors?.themepage_bg}
-				py='5rem'
-				fontFamily={fonts?.geistRegular}
-				className='related templates'
-			>
+
+			<Box bg={colors?.themepage_bg} py='5rem' fontFamily={fonts?.geistRegular}>
 				<SectionWrapper>
 					<Heading fontSize={'1.8rem'} fontFamily={fonts?.geistBold}>
-						Related Templates
+						Related Themes
 					</Heading>
-					{relatedImgs}
+					<Box h='350px' overflow={'hidden'}>
+						{relatedImgs}
+					</Box>
 				</SectionWrapper>
 			</Box>
 		</PageLayout>
@@ -89,24 +93,38 @@ const RelatedImages = (data: any) => {
 	);
 };
 
+const ThemeLayout = ({ children }: { children: ReactNode }) => {
+	return (
+		<Grid
+			gridTemplateColumns={{ base: '1fr', md: '40% 1px 60%' }}
+			mt='3rem'
+			gap={{ base: '6px', lg: '20px' }}
+		>
+			{children}
+		</Grid>
+	);
+};
+
 const SectionWrapper = ({ children }: { children: ReactNode }) => {
 	return <SectionPadding>{children}</SectionPadding>;
 };
 
 const ThemeIntro = ({ data }: { data: any }) => {
 	return (
-		<Box>
+		<Box
+			position={{ base: 'relative', md: 'sticky' }}
+			height={{ base: '100%', md: 'min-content' }}
+			top={{ base: '-1.3rem', md: '8rem' }}
+			pb='2rem'
+		>
 			<ThemeHeading>{data?.title}</ThemeHeading>
-			<Text
-				mt='1.8rem'
-				color={colors?.text_secondary}
-				fontFamily={fonts?.geistRegular}
-			>
+			<Text mt='1.8rem' color={colors?.text_secondary}>
 				{data?.description}
 			</Text>
 			<ViewDemoBtn>
-				<Link target={'_blank'} href={data?.demoUrl ? data?.demoUrl : ''} />
-				View Demo
+				<Link target={'_blank'} href={data?.demoUrl ? data?.demoUrl : ''}>
+					View Demo
+				</Link>
 			</ViewDemoBtn>
 			<Box mt='1.5rem' fontFamily={fonts?.geistRegular}>
 				<ThemeSpaceBetween>
@@ -128,15 +146,8 @@ const ThemeIntro = ({ data }: { data: any }) => {
 
 const ThemeFeatureDescription = ({ data }: { data: any }) => {
 	return (
-		<Box>
-			<Box
-				height={{ base: '25rem' }}
-				boxShadow={'2xl'}
-				borderRadius={'6px'}
-				bg='white'
-				width={{ base: '100%', md: '95%' }}
-				overflow={'hidden'}
-			>
+		<ThemeFeatureWrapper>
+			<ThemeFeatureImgWrapper>
 				<Image
 					w='full'
 					h='full'
@@ -144,18 +155,22 @@ const ThemeFeatureDescription = ({ data }: { data: any }) => {
 					src={data?.image}
 					alt='Hero Image'
 				/>
-			</Box>
+			</ThemeFeatureImgWrapper>
 			<Box mt='4rem' pb='2rem'>
 				<Heading fontSize={'1.8rem'} fontFamily={fonts?.geistBold}>
 					Theme Features
 				</Heading>
-				<Text mt='1rem' color={colors?.text_secondary}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
-					asperiores! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Sunt, asperiores!
+				<Text
+					mt='1rem'
+					color={colors?.text_secondary}
+					fontFamily={fonts?.geistRegular}
+					lineHeight={'30px'}
+				>
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+					veritatis?
 				</Text>
 			</Box>
-		</Box>
+		</ThemeFeatureWrapper>
 	);
 };
 
@@ -167,6 +182,9 @@ const DeviderLine = () => {
 			w={{ base: '0', md: '1px' }} // Visible only on md+ devices
 			h={{ base: '0', md: '100vh' }}
 			mx='auto'
+			position={'sticky'}
+			// height={'100vh'}
+			top='0'
 		></Box>
 	);
 };
@@ -224,5 +242,36 @@ const ViewDemoBtn = ({ children }: { children: ReactNode }) => {
 		>
 			{children}
 		</Button>
+	);
+};
+
+const ThemeFeatureWrapper = ({ children }: { children: ReactNode }) => {
+	return (
+		<Box
+			overflowY={{ base: 'auto', md: 'scroll' }}
+			sx={{
+				'::-webkit-scrollbar': {
+					display: 'none',
+				},
+				'-ms-overflow-style': 'none',
+				'scrollbar-width': 'none',
+			}}
+		>
+			{children}
+		</Box>
+	);
+};
+const ThemeFeatureImgWrapper = ({ children }: { children: ReactNode }) => {
+	return (
+		<Box
+			height={{ base: '25rem' }}
+			boxShadow={'0 8px 30px rgba(0, 0, 0, 0.10)'}
+			borderRadius={'6px'}
+			bg='white'
+			width={{ base: '100%', md: '97%', lg: '90%', xl: '95%' }}
+			overflow={'hidden'}
+		>
+			{children}
+		</Box>
 	);
 };

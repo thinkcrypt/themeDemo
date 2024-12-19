@@ -8,61 +8,79 @@ import useCustomFont from '@/hooks/useCustomFont';
 import { borderRadius } from '@/lib/config/constants';
 import { currency } from '@/lib/config/constants';
 
+//////////////////////// STYLES
+const cardBodyTextWrapperStyle = {
+	fontSize: { base: '16px', md: '18px' },
+	fontWeight: '500',
+	mt: { base: '8px', md: '10px' },
+};
+const cardBodyyHeadingStyle = {
+	fontSize: { base: '20px', md: '24px' },
+	lineHeight: '20px',
+};
+
 const ThemeCard = ({ backendData: backendDemoData }: { backendData: any }) => {
 	const { fonts } = useCustomFont();
 	return (
-		<Box maxW={{ base: 'full', md: '340px' }} overflow={'hidden'}>
+		<ThemeWrapper>
 			<Link target='_blank' href={`/themes/${backendDemoData?._id}`}>
 				<CardWrapper>
 					<CardImage backendDemoData={backendDemoData} />
 				</CardWrapper>
 
-				<Box className='text-part' mt='18px' fontFamily={fonts?.geistRegular}>
-					<Heading
-						as='h5'
-						fontSize={{ base: '20px', md: '24px' }}
-						lineHeight={'20px'}
-					>
+				<CardBody font={fonts?.geistRegular}>
+					<Heading as='h5' {...cardBodyyHeadingStyle}>
 						{backendDemoData?.name}
 					</Heading>
 
-					<Text
-						fontSize={{ base: '16px', md: '18px' }}
-						fontWeight={'500'}
-						mt={{ base: '8px', md: '10px' }}
-					>
+					<Text {...cardBodyTextWrapperStyle}>
 						<Text as='span' color={'black'} fontSize={'1.3rem'} mr='0.3rem'>
 							{currency?.symbol}
 						</Text>
 						{backendDemoData?.price} BDT
 					</Text>
 					<SpaceBetween>
-						<Text
-							fontFamily={fonts?.geistRegular}
-							fontSize={'15px'}
-							mt='0.5rem'
-						>
-							{backendDemoData?.developer}
-						</Text>
+						<Text fontSize={'15px'}>{backendDemoData?.developer}</Text>
 						<IconCircle>
 							<Icon name='navigate-page' size={15} />
 						</IconCircle>
 					</SpaceBetween>
-				</Box>
+				</CardBody>
 			</Link>
-		</Box>
+		</ThemeWrapper>
 	);
 };
 
 export default ThemeCard;
 
-// Hepler compenents
+// HELPER COMPONENTS
+
+const CardBody = ({
+	children,
+	font,
+}: {
+	children: ReactNode;
+	font: string;
+}) => {
+	return (
+		<Box mt='18px' fontFamily={font}>
+			{children}
+		</Box>
+	);
+};
+const ThemeWrapper = ({ children }: { children: ReactNode }) => {
+	return (
+		<Box maxW={{ base: 'full', md: '340px' }} overflow={'hidden'}>
+			{children}
+		</Box>
+	);
+};
 
 const CardWrapper = ({ children }: { children: ReactNode }) => {
 	return (
 		<Box
 			w='full'
-			height={{ base: '240px', md: '385px' }}
+			height={{ base: '240px', md: '315px' }}
 			overflow={'hidden'}
 			borderRadius={borderRadius?.sm}
 			border='1px solid #d6d3d1'
@@ -88,18 +106,7 @@ const IconCircle = ({ children }: { children: ReactNode }) => {
 		</Text>
 	);
 };
-// const CardHeading = ({ children }: { children: ReactNode }) => {
-// 	return (
-// 		<Heading
-// 			as='h5'
-// 			fontSize={{ base: '20px', md: '24px' }}
-// 			lineHeight={'20px'}
-// 			fontFamily={fonts?.geistBold}
-// 		>
-// 			{children}
-// 		</Heading>
-// 	);
-// };
+
 const CardImage = ({ backendDemoData }: { backendDemoData: any }) => {
 	return (
 		<Image
