@@ -70,7 +70,7 @@ const ThemeDetails = () => {
 
 export default ThemeDetails;
 
-//////////////// HELPER COMPONENTS
+//////////////// HELPER COMPONENTS.
 
 const RelatedImages = (data: any) => {
 	// console.log('images', data);
