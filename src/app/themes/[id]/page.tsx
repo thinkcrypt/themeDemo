@@ -77,7 +77,7 @@ const RelatedImages = (data: any) => {
 	return (
 		<Grid gridTemplateColumns={'1fr 1fr 1fr'} mt='1rem' gap='20px'>
 			{data?.images?.images?.map((item: any, i: number) => (
-				<Link href={`demo-dummy`} key={i}>
+				<Link href={``} key={i}>
 					<Image
 						key={i}
 						src={item}
