@@ -23,9 +23,9 @@ import useCustomStyle from '@/hooks/useCustomStyle';
 type HeaderProps = BoxProps & {};
 
 const Header: FC<HeaderProps> = ({}) => {
-	const { header } = data;
+	// const { header } = data;
 	const { colors } = useCustomStyle();
-	const Logo = header?.logo;
+	// const Logo = header?.logo;
 
 	return (
 		<Wrapper>
@@ -61,7 +61,13 @@ const Header: FC<HeaderProps> = ({}) => {
 export default Header;
 
 const Wrapper = ({ children }: { children: ReactNode }) => (
-	<Container position='sticky' top='0px' left='0px' zIndex={HeaderZIndex}>
+	<Container
+		bg='white'
+		position='sticky'
+		top='0px'
+		left='0px'
+		zIndex={HeaderZIndex}
+	>
 		{children}
 	</Container>
 );

@@ -1,5 +1,6 @@
 export const colors = {
-	primary: '#C09671',
+	text_blue: '#6366f1',
+	text_blyue: '#d9d8d8',
 	lightPrimary: '#e7b990',
 	secondary: '#F9F1EA',
 	lightSecondary: '#F3EBE5',
@@ -20,9 +21,9 @@ export const colors = {
 	overlay: 'rgba(0,0,0,0.3)',
 
 	/// mine
-text_primary: '#171717',
-text_secondary: '#666'
-
+	text_primary: '#171717',
+	text_secondary: '#666',
+	themepage_bg: '#fafafa',
 };
 
 const useCustomStyle = () => {

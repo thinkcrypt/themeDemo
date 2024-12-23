@@ -3,14 +3,14 @@ import localFont from 'next/font/local';
 import './globals.css';
 import { Providers } from '@/components';
 
-const geistSans = localFont({
-	src: './fonts/GeistVF.woff',
-	variable: '--font-geist-sans',
-	weight: '100 900',
+const geistRegular = localFont({
+	src: './fonts/Geist-Regular.ttf',
+	variable: '--font-geist-regular',
+	weight: '100 400 500 800',
 });
-const geistMono = localFont({
-	src: './fonts/GeistMonoVF.woff',
-	variable: '--font-geist-mono',
+const geistBold = localFont({
+	src: './fonts/Geist-Bold.ttf',
+	variable: '--font-geist-bold',
 	weight: '100 900',
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<head></head>
-			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+			<body className={`${geistRegular.variable} ${geistBold.variable}`}>
 				<Providers>{children}</Providers>
 			</body>
 		</html>

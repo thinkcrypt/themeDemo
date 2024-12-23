@@ -43,7 +43,7 @@ export interface RootState {
 export const mainApi = createApi({
 	reducerPath: 'mainApi',
 	baseQuery: fetchBaseQuery({
-		baseUrl: `${URL.api}/user-api`,
+		baseUrl: `${URL.api}/admin/api`,
 		prepareHeaders: (headers, { getState }) => {
 			const state = getState() as RootState;
 

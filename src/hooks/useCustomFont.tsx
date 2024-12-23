@@ -1,6 +1,7 @@
 export const fonts = {
-	marcellus: 'Marcellus, serif',
-	inter: 'Inter, sans-serif',
+	geistRegular: 'var(--font-geist-regular)',
+	geistBold: 'var(--font-geist-bold)',
+	openSans: 'Open Sans, sans-serif',
 };
 
 const useCustomFont = () => {
